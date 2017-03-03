@@ -4,7 +4,7 @@
 Component implementation for Dynamic digital effect.<br>
 Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 
-<!--<img src='https://cloud.githubusercontent.com/assets/5795227/20123354/d877dba4-a61e-11e6-8e5a-c85f76419e20.gif' />-->
+<img src='http://image18-c.poco.cn/mypoco/myphoto/20170303/17/18509322420170303172443095.gif?311x565_110' />
 
 ### Content
 - [Installation](#installation)
