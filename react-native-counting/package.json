@@ -1,17 +1,25 @@
 {
   "name": "react-native-counting",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhaomingbo/react-native-counting.git"
+  },
   "author": "mubin",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhaomingbo/react-native-counting/issues"
+  },
    "keywords": [
     "react-native",
     "ios",
     "counting",
     "react-native-counting"
-  ]
+  ],
+  "homepage": "https://github.com/zhaomingbo/react-native-counting"
 }

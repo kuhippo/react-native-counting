@@ -6,31 +6,18 @@ Component implementation for Dynamic digital effect.<br>
 
 <img src='http://image18-c.poco.cn/mypoco/myphoto/20170303/17/18509322420170303172443095.gif?311x565_110' />
 
-### Content
-- [Installation](#installation)
-- [Usage example](#usage-example)
-- [Component properties](#component-properties)
-- [Questions?](#questions)
 
-### Installation
-1. Install package via npm:
-
-  ```
-  npm install react-native-counting
-  ```
-2. ## Sorry only support iOS ,Android temporarily cannot use 
-3. Link your native dependencies:
-  ```
-  react-native link react-native-counting
-  ```
-4. Inside your code include JS part by adding (ES6)
-
-  ```javascript
-  import Counting from 'react-native-counting';
-  
-  ```
-
-5. Compile and have fun!
+### Options
+* asdas
+* asdas
+* asd
+* asd
+* aasd
+* asd
+* asd
+* as
+* d
+* sa
 
 ### Usage example
 You can run built-in example via few simple steps:
@@ -122,6 +109,7 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('nodeforum', () => nodeforum);
 ```
 
+In this example, `Image` component will be blurred, a `BlurView` content will stay untouched.
 
 
 ### Questions?
