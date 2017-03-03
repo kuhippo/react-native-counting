@@ -2,7 +2,7 @@
 
 ### React Native Counting
 Component implementation for Dynamic digital effect.<br>
-Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
+
 
 <img src='http://image18-c.poco.cn/mypoco/myphoto/20170303/17/18509322420170303172443095.gif?311x565_110' />
 
