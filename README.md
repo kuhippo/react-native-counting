@@ -1,10 +1,10 @@
 [![npm version](https://badge.fury.io/js/react-native-blur.svg)](https://badge.fury.io/js/react-native-blur)
 
-### React Native Blur
-Component implementation for UIVisualEffectView's blur and vibrancy effect.<br>
+### React Native Counting
+Component implementation for Dynamic digital effect.<br>
 Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 
-<img src='https://cloud.githubusercontent.com/assets/5795227/20123354/d877dba4-a61e-11e6-8e5a-c85f76419e20.gif' />
+<!--<img src='https://cloud.githubusercontent.com/assets/5795227/20123354/d877dba4-a61e-11e6-8e5a-c85f76419e20.gif' />-->
 
 ### Content
 - [Installation](#installation)
@@ -18,32 +18,18 @@ Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 1. Install package via npm:
 
   ```
-  npm install react-native-blur
+  npm install react-native-counting
   ```
-
-2. Link your native dependencies:
+2. ## Sorry only support iOS ,Android temporarily cannot use 
+3. Link your native dependencies:
   ```
-  react-native link react-native-blur
+  react-native link react-native-counting
   ```
-3. (Android only) Add the following to your `android/app/build.gradle`
-  ```
-  repositories {
-      maven { url 'https://github.com/500px/500px-android-blur/raw/master/releases/' }
-  }
-
-  buildscript {
-      repositories {
-          maven { url 'https://github.com/500px/500px-android-blur/raw/master/releases/' }
-      }
-      dependencies {
-          classpath 'com.fivehundredpx:blurringview:1.0.0'
-      }
-  }
-  ```
-4. Inside your code include JS part by adding
+4. Inside your code include JS part by adding (ES6)
 
   ```javascript
-  const { BlurView, VibrancyView } = require('react-native-blur');
+  import Counting from 'react-native-counting;
+  
   ```
 
 5. Compile and have fun!
@@ -52,92 +38,98 @@ Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 You can run built-in example via few simple steps:
 1. Clone repository
 2. Go to `examples/Basic`
-3. Run `npm install && open Basic.xcodeproj`
-4. Hit "Run"(`cmd+R`) button on XCode panel
+3. Run `npm install `
+4. Run `react-native run-ios `
 
-#### Blur View
-To use `blur` view, you need to require `BlurView` to your module and insert `<BlurView>` tag inside render function as it's done below:
+#### Counting:
 
 ```javascript
-const { BlurView } = require('react-native-blur');
+import React, { Component } from 'react';
+import Counting from './react-native-counting-master/index';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity
+} from 'react-native';
 
-const Menu = React.createClass({
+
+
+export default class nodeforum extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      finshded:false
+    }
+  }
+  
+  _onPressButton(){
+    this.counting.countingStart(0,5200.10,3000);
+    this.setState({
+      finshded:false
+    })
+  }
+
+  _finish(){
+     this.setState({
+      finshded:true
+    })
+  }
+
   render() {
-    return (
-      <Image source={{uri}} style={styles.menu}>
-        <BlurView blurType="light" blurAmount={10} style={styles.blur}>
-          <Text>Hi, I am a tiny menu item</Text>
-        </BlurView>
-      </Image>
+
+  const fontProperty = {
+      fontSize:35,
+      textAlignment:'center',
+      boldSystem:false,
+      method:'Linear'
+  }
+  const { finshded } = this.state;
+  return (
+      <View style={styles.container}>
+        <Counting style={styles.counting} text="0.00" ref={(ref) => this.counting = ref} fontProperty={fontProperty} textColor="white" onFinish={this._finish.bind(this)}/>
+        <TouchableOpacity onPress={this._onPressButton.bind(this)} style={styles.button}>
+          <Text>click Me</Text>
+        </TouchableOpacity>
+        <Text style={styles.isfinish}>{finshded?"finished":"dnf"}</Text>
+      </View>
     );
   }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  button:{
+    marginTop:20,
+  },
+  counting:{
+    marginTop:60,
+    backgroundColor:'black',
+    width:180,
+    height:150,
+    borderRadius:20,
+  },
+  isfinish:{
+    marginTop:20,
+    color:'red'
+  }
+  
 });
+
+AppRegistry.registerComponent('nodeforum', () => nodeforum);
 ```
 
 In this example, `Image` component will be blurred, a `BlurView` content will stay untouched.
 
-#### Vibrancy View
-> The vibrancy effect lets the content underneath a blurred view show through more vibrantly
-
-```javascript
-const { VibrancyView } = require('react-native-blur');
-
-const Menu = React.createClass({
-  render() {
-    return (
-      <Image source={{uri}} style={styles.menu}>
-        <VibrancyView blurType="light" style={styles.blur}>
-          <Text>Hi, I am a tiny menu item</Text>
-        </VibrancyView>
-      </Image>
-    );
-  }
-});
-```
-
-### Component properties
-- `blurType` (String) - blur type effect
-  - `xlight` - extra light blur type
-  - `light` - light blur type
-  - `dark` - dark blur type
-- `blurAmount` (Default: 10, Number) - blur amount effect
-  - `0-100` - Adjusts blur intensity
-
-*Note: `blurAmount` does not refresh with Hot Reloading. You must a refresh the app to view the results of the changes*
-
-### Android
-
-Android support uses an [external library](https://github.com/500px/500px-android-blur) which has slightly different properties and setup requirements. This is why extra code must be added manually to the `android/app/build.gradle` file as documented above.
-
-The android BlurView works by blurring an existing referenced view, so you must wait till the view you want to blur is rendered and then provide the reference to the BlurView as the `viewRef` prop. Take a look at the example to see how it works.
-
-It has the following props:
-- `viewRef` (Number) - a reference to the existing view you want to blur
-- `blurRadius` (Number)
-- `downsampleFactor` (Number)
-- `overlayColor` (Color)
-
-#### Troubleshooting
-On older instances of react-native, BlurView package does not get added into the MainActivity/MainApplication classes where you would see `Warning: Native component for 'BlurView' does not exist` in RN YellowBox or console.
-
-To rectify this, you can add the BlurViewPackage manually in MainActivity/MainApplication classes
-```java
-...
-import com.cmcewen.blurview.BlurViewPackage;
-...
-
-public class MainApplication extends Application implements ReactApplication {
-...
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new BlurViewPackage()
-      );
-    }
-...
-}
-```
 
 ### Questions?
-Feel free to contact me in [twitter](https://twitter.com/kureevalexey) or [create an issue](https://github.com/Kureev/react-native-blur/issues/new)
+Feel free to contact me By qq(452359549)
+
+### Thinks
+
+
