@@ -9,8 +9,6 @@ Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 ### Content
 - [Installation](#installation)
 - [Usage example](#usage-example)
-  - [Blur view](#blur-view)
-  - [Vibrancy view](#vibrancy-view)
 - [Component properties](#component-properties)
 - [Questions?](#questions)
 
