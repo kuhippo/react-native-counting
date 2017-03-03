@@ -28,7 +28,7 @@ Check the [roadmap here](https://github.com/Kureev/react-native-blur/issues/1)
 4. Inside your code include JS part by adding (ES6)
 
   ```javascript
-  import Counting from 'react-native-counting;
+  import Counting from 'react-native-counting';
   
   ```
 
