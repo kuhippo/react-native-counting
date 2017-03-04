@@ -127,6 +127,6 @@ AppRegistry.registerComponent('nodeforum', () => nodeforum);
 ### Questions?
 Feel free to contact me By qq(452359549)
 
-### Thinks
+### thanks
 
 
