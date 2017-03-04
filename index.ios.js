@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     marginTop:20,
   },
   counting:{
-    marginTop:60,
+    marginTop:59,
     backgroundColor:'black',
     width:180,
     height:150,
