@@ -7,17 +7,19 @@ Component implementation for Dynamic digital effect.<br>
 <img src='http://image18-c.poco.cn/mypoco/myphoto/20170303/17/18509322420170303172443095.gif?311x565_110' />
 
 
-### Options
-* asdas
-* asdas
-* asd
-* asd
-* aasd
-* asd
-* asd
-* as
-* d
-* sa
+### 属性&&方法
+* text:String 默认显示的文字
+* fontProperty:object  传入一个对象</br>
+
+ {
+     1.fontSize:字体大小(Int)
+     2.textAlignment:center || left ||right  对齐方式(string)
+     3.boldSystem:是否加粗(bool)
+     4.method:动画方式(String) EaseInOut || EaseIn || EaseOut || Linear
+}
+* textColor 文字底色(Colo)
+* onFinish 完成回调执行的方法(func)
+
 
 ### Usage example
 You can run built-in example via few simple steps:
