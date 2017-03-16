@@ -5,10 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Color;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -17,9 +14,7 @@ import android.widget.TextView;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.uimanager.ReactCompoundView;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 import java.text.DecimalFormat;
@@ -28,33 +23,33 @@ import java.text.DecimalFormat;
  * Created by zmb on 11/3/17.
  */
 
-public class NumTextView extends TextView {
+public class CountingNumTextView extends TextView {
 
 //    模式
     public String method;
 //    动画间隔
     public double anDuration;
 
-    public NumTextView(Context context) {
+    public CountingNumTextView(Context context) {
         super(context);
 
     }
 
-    public NumTextView(Context context, AttributeSet attrs) {
+    public CountingNumTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public NumTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CountingNumTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public NumTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public CountingNumTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
 
     public void numberTimer(float start,float end,double dur){
-        final NumTextView view = this;
+        final CountingNumTextView view = this;
         final DecimalFormat df = new DecimalFormat("###.00");
 
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(start,end);
@@ -129,8 +124,6 @@ public class NumTextView extends TextView {
                 "topChange",
                 event);
     }
-
-
 
 
 
