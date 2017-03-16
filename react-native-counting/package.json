@@ -1,7 +1,7 @@
 {
   "name": "react-native-counting",
-  "version": "0.1.4",
-  "description": "",
+  "version": "0.5.5",
+  "description": "React Native Counting component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

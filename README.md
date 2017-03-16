@@ -1,6 +1,7 @@
 [![npm version](https://badge.fury.io/js/react-native-blur.svg)](https://badge.fury.io/js/react-native-blur)
 
 ### React Native Counting
+**Android && iOS**
 Component implementation for Dynamic digital effect.<br>
 
 
@@ -18,26 +19,25 @@ Component implementation for Dynamic digital effect.<br>
   ```
   npm install react-native-counting
   ```
-2. ## Sorry only support iOS ,Android temporarily cannot use 
-3. Link your native dependencies:
+2. Link your native dependencies:
   ```
   react-native link react-native-counting
   ```
-4. Inside your code include JS part by adding (ES6)
+3. Inside your code include JS part by adding (ES6)
 
   ```javascript
   import Counting from 'react-native-counting';
   
   ```
 
-5. Compile and have fun!
+4. Compile and have fun!
 
 ### Usage example
 You can run built-in example via few simple steps:
 1. Clone repository
 2. Go to `examples/Basic`
 3. Run `npm install `
-4. Run `react-native run-ios `
+4. Run `react-native run-ios && react-native run-android`
 
 #### Counting:
 

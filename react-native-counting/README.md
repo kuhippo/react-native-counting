@@ -7,7 +7,7 @@ Component implementation for Dynamic digital effect.<br>
 <img src='http://image18-c.poco.cn/mypoco/myphoto/20170303/17/18509322420170303172443095.gif?311x565_110' />
 
 ### 用法
-1. npm install react-native --save 
+1. npm install react-native-counting --save 
 2. react-native link react-native-counting 
 
 ### 属性&&方法
@@ -25,7 +25,7 @@ Component implementation for Dynamic digital effect.<br>
 
 ```javascript
 import React, { Component } from 'react';
-import Counting from './react-native-counting-master/index';
+import Counting from 'react-native-counting';
 import {
   AppRegistry,
   StyleSheet,
